@@ -1,0 +1,49 @@
+sort1 uses: Bubble Sort
+
+How do you know?:
+
+    Better omega when compared to selection sort.
+
+    - random5000.txt
+        trial 1: 0m0.100s
+
+    - random10000.txt
+        trial 1: 0m0.326s
+
+    - random50000.txt
+        trial 1: 0m7.806s
+
+    - sorted50000.txt
+        trial 1: 0m0.523s
+
+
+sort2 uses: Merge Sort
+
+How do you know?: Fastest when using large sets
+
+    - random5000:
+        trial 1: 0m0.076s
+        trial 2: 0m0.033s
+
+    - random50000:
+        trial 1: 0m0.748s
+        trial 2: 0m0.663s
+
+
+sort3 uses: Selection Sort
+
+How do you know?:
+
+    The best case (omega) is much worse than sort1.
+    Here, the best case would be that the array is already sorted.
+    When we run it on an already sorted array, it still takes a long time.
+
+    - random5000:
+        trial 1: 0m0.069s
+
+    - random50000:
+        trial 1: 0m7.930s
+
+    - sorted50000:
+        trial 1: 0m3.183s
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Internet Trivia!</title>
+        <script>
+            // essentially a main function that waits for the DOM to load before running the script
+            document.addEventListener('DOMContentLoaded', function()
+            {
+
+                // Define response when correct answer is selected
+                // selects the correct button
+                let correct = document.querySelector('.correct');
+                // when correct button is clicked
+                correct.addEventListener('click', function()
+                {
+                    // changes the CSS to make the color green
+                    correct.style.backgroundColor = 'green';
+                    // change our empty feedback1 placeholder to display correct
+                    document.querySelector('#feedback1').innerHTML = 'Correct!'
+                })
+
+                // Define response when incorrect answer is selected
+                // selects ALL elements with the 'incorrect' class and stores them in an array
+                let incorrects = document.querySelectorAll('.incorrect');
+                // need this for loop to perform function on all the elements
+                for (let i = 0; i < incorrects.length; i++)
+                {
+                    incorrects[i].addEventListener('click', function()
+                    {
+                    incorrects[i].style.backgroundColor = 'red';
+                    document.querySelector('#feedback1').innerHTML = 'Incorrect. Try Again!'
+                    })
+                }
+
+                // Free response check
+                // when 'check answer' button (we've given this button the id of 'click) is clicked
+                document.querySelector('#check').addEventListener('click', function()
+                {
+                    let input = document.querySelector('input');
+                    if (input.value === 'Routers')
+                    {
+
+                    }
+
+
+                })
+
+
+
+
+            })
+
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice</h2>
+                <hr>
+
+                <h3>Q1: The original "internet", called ARPANET, was established in what year?</h3>
+                <button class="incorrect">1985</button>
+                <button class="incorrect">1972</button>
+                <button class="correct">1969</button>
+                <button class="incorrect">1964</button>
+                <!-- this empty paragraph is a placeholder for giving feedback-->
+                <p id="feedback1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Q2: ____ are specialized computers, with CPUs and memory, that routes, or relays, data from
+                    one point to another. </h3>
+                <input type="text"></input>
+                <button id="check">Check Answer</button>
+                <!-- this empty paragraph is a placeholder for giving feedback-->
+                <p id="feedback2"></p>
+            </div>
+
+        </div>
+
+    </body>
+</html>

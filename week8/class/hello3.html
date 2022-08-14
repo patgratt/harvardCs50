@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+
+        <title>hello</title>
+    </head>
+    <body>
+        <form>
+            <input autocomplete="off" autofocus id="name" placeholder="Name" type="text">
+            <input type="submit">
+        </form>
+
+        <script>
+
+            function greet()
+            {
+                // declare a variable name in which we call the querySelector method on the special global variable document.
+                // this method allows us to select the html element that has been given the unique id 'name'. The .value is an atttribute
+                // of the 'name' element that lets us grab the actual value from that name element
+                let name = document.querySelector('#name').value;
+                alert('hello, ' + name);
+            }
+
+            // here we call the addEventListener function that will tell the browser to call the function greet when it detects a submit event
+            document.querySelector('form').addEventListener('submit', greet);
+
+        </script>
+
+
+
+    </body>
+
+</html>
