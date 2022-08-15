@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>Register</h1>
+    <!--form will send user to /register route-->
+    <form action="/register" method="post">
+        <!-- textbox to input name-->
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+            <!--jinja loop to populate checkboxes rather than selection menu, this is not as
+            pretty but allows the user to select multiple sports with one registration-->
+            {% for sport in sports %}
+                <input name="sport" type="checkbox" value="{{ sport }}"> {{ sport }}
+            {% endfor %}
+        <!--button to submit form -->
+        <input type="submit" value="Register">
+
+    </form>
+
+{% endblock %}
