@@ -9,9 +9,3 @@ app = Flask(__name__)
 def index():
     # render (print) that html file to the user's screen
     return render_template("index.html")
-
-# define route for /greet
-@app.route("/greet")
-def greet():
-    name = request.args.get("name")
-    return render_template("greet.html", name=name)
