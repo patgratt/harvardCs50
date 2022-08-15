@@ -3,6 +3,10 @@ from flask import Flask, render_template, request
 # makes the current file into a flask application
 app = Flask(__name__)
 
+
+sports = ["Basketball", "Soccer", "Ultimate Frisbee"]
+
+
 # define a route for slash (homepage)
 @app.route("/")
 def index():
@@ -12,8 +16,6 @@ def index():
 # by default routes only support get, so have to specify post
 @app.route("/register", methods=['POST'])
 def register():
-
-    sports = ["Basketball", "Soccer", "Ultimate Frisbee"]
     # Validate submission
     # if the name value is false (they didn't input anything or didn't choose a sport
     if not request.form.get("name") or request.form.get("sport") not in sports:

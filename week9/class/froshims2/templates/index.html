@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>Register</h1>
+    <!--form will send user to /register route-->
+    <form action="/register" method="post">
+        <!-- textbox to input name-->
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+        <!-- need to provide this selection menu with a ame so that we can check the result
+             in app.py-->
+        <select name="sport">
+            <!--this top option makes sport the default value of the selection box-->
+            <option disable selected>Sport</option>
+            <!-- this is jinja loop that autopopulates the selectbox from an
+                 array we defined in app.py-->
+            {% for sport in sports %}
+                <option>{{ sport }}</option>
+            {% endfor %}
+        </select>
+        <!--button to submit form -->
+        <input type="submit" value="Register">
+
+    </form>
+
+{% endblock %}
